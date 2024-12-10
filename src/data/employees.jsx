@@ -112,3 +112,60 @@ export const employees = [
     },
     // Vous pouvez ajouter plus d'employés ici
   ];
+
+  export const Site = [
+  {
+    id: 1,
+    name: "Paris",
+    address: "123 Avenue des Champs-Élysées",
+    postalCode: "75008"
+  },
+  {
+    id: 2, 
+    name: "Lyon",
+    address: "45 Rue de la République",
+    postalCode: "69001"
+  },
+  {
+    id: 3,
+    name: "Marseille",
+    address: "92 La Canebière",
+    postalCode: "13001"
+  },
+  {
+    id: 4,
+    name: "Bordeaux",
+    address: "15 Cours de l'Intendance",
+    postalCode: "33000"
+  },
+  {
+    id: 5,
+    name: "Lille",
+    address: "67 Rue de Béthune",
+    postalCode: "59000"
+  },
+  {
+    id: 6,
+    name: "Toulouse",
+    address: "23 Rue d'Alsace-Lorraine",
+    postalCode: "31000"
+  },
+  {
+    id: 7,
+    name: "Nantes",
+    address: "4 Place du Commerce",
+    postalCode: "44000"
+  },
+  {
+    id: 8,
+    name: "Strasbourg",
+    address: "12 Place Kléber",
+    postalCode: "67000"
+  }
+  ]
+
+// Fonction pour extraire les départements uniques
+export const getUniqueDepartments = () => {
+  const departments = employees.map(employee => employee.department);
+  return [...new Set(departments)];
+};
