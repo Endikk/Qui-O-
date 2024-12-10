@@ -173,49 +173,62 @@ const EmployeeDirectory = () => {
           
           <DirectorySelector activeDirectory={activeDirectory} setActiveDirectory={setActiveDirectory} />
 
-          <div className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
-            <div className="relative flex-1 transform transition-all duration-300 hover:scale-[1.01]">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Prénom..."
-                className="w-full pl-12 h-14 rounded-xl border-0 bg-white/70 backdrop-blur-sm shadow-lg focus:ring-2 focus:ring-purple-500 focus:bg-white/90 transition-all duration-300"
-                value={searchFirstName}
-                onChange={(e) => setSearchFirstName(e.target.value)}
-              />
-            </div>
-            
-            <div className="relative flex-1 transform transition-all duration-300 hover:scale-[1.01]">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Nom..."
-                className="w-full pl-12 h-14 rounded-xl border-0 bg-white/70 backdrop-blur-sm shadow-lg focus:ring-2 focus:ring-purple-500 focus:bg-white/90 transition-all duration-300"
-                value={searchLastName}
-                onChange={(e) => setSearchLastName(e.target.value)}
-              />
+          {/* Nouvelle disposition verticale des champs de recherche */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <div className="space-y-2">
+              <label className="block text-sm font-medium text-gray-700 ml-1">Prénom</label>
+              <div className="relative transform transition-all duration-300 hover:scale-[1.01]">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Rechercher par prénom..."
+                  className="w-full pl-12 h-14 rounded-xl border-0 bg-white/70 backdrop-blur-sm shadow-lg focus:ring-2 focus:ring-purple-500 focus:bg-white/90 transition-all duration-300"
+                  value={searchFirstName}
+                  onChange={(e) => setSearchFirstName(e.target.value)}
+                />
+              </div>
             </div>
 
-            <div className="relative flex-1 transform transition-all duration-300 hover:scale-[1.01]">
-              <Building className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Département..."
-                className="w-full pl-12 h-14 rounded-xl border-0 bg-white/70 backdrop-blur-sm shadow-lg focus:ring-2 focus:ring-purple-500 focus:bg-white/90 transition-all duration-300"
-                value={searchDepartment}
-                onChange={(e) => setSearchDepartment(e.target.value)}
-              />
+            <div className="space-y-2">
+              <label className="block text-sm font-medium text-gray-700 ml-1">Nom</label>
+              <div className="relative transform transition-all duration-300 hover:scale-[1.01]">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Rechercher par nom..."
+                  className="w-full pl-12 h-14 rounded-xl border-0 bg-white/70 backdrop-blur-sm shadow-lg focus:ring-2 focus:ring-purple-500 focus:bg-white/90 transition-all duration-300"
+                  value={searchLastName}
+                  onChange={(e) => setSearchLastName(e.target.value)}
+                />
+              </div>
             </div>
 
-            <div className="relative flex-1 transform transition-all duration-300 hover:scale-[1.01]">
-              <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Téléphone..."
-                className="w-full pl-12 h-14 rounded-xl border-0 bg-white/70 backdrop-blur-sm shadow-lg focus:ring-2 focus:ring-purple-500 focus:bg-white/90 transition-all duration-300"
-                value={searchPhone}
-                onChange={(e) => setSearchPhone(e.target.value)}
-              />
+            <div className="space-y-2">
+              <label className="block text-sm font-medium text-gray-700 ml-1">Département</label>
+              <div className="relative transform transition-all duration-300 hover:scale-[1.01]">
+                <Building className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Rechercher par département..."
+                  className="w-full pl-12 h-14 rounded-xl border-0 bg-white/70 backdrop-blur-sm shadow-lg focus:ring-2 focus:ring-purple-500 focus:bg-white/90 transition-all duration-300"
+                  value={searchDepartment}
+                  onChange={(e) => setSearchDepartment(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="block text-sm font-medium text-gray-700 ml-1">Téléphone</label>
+              <div className="relative transform transition-all duration-300 hover:scale-[1.01]">
+                <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Rechercher par téléphone..."
+                  className="w-full pl-12 h-14 rounded-xl border-0 bg-white/70 backdrop-blur-sm shadow-lg focus:ring-2 focus:ring-purple-500 focus:bg-white/90 transition-all duration-300"
+                  value={searchPhone}
+                  onChange={(e) => setSearchPhone(e.target.value)}
+                />
+              </div>
             </div>
           </div>
         </div>
